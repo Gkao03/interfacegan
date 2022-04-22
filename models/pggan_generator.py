@@ -46,7 +46,7 @@ class PGGANGenerator(BaseGenerator):
     sys.path.append(model_settings.BASE_DIR + '/pggan_tf_official')
 
     self.logger.info(f'Loading tensorflow model from `{self.tf_model_path}`.')
-    tfc.InteractiveSession()
+    tf.InteractiveSession()
     with open(self.tf_model_path, 'rb') as f:
       _, _, tf_model = pickle.load(f)
     self.logger.info(f'Successfully loaded!')
