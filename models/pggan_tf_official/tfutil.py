@@ -12,9 +12,10 @@ import importlib
 import imp
 import numpy as np
 from collections import OrderedDict
-import tensorflow.compat.v1 as tf
+# import tensorflow.compat.v1 as tf
+import tensorflow as tf
 
-tf.disable_eager_execution()
+# tf.disable_eager_execution()
 
 #----------------------------------------------------------------------------
 # Convenience.
