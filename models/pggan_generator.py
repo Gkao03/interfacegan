@@ -41,11 +41,12 @@ class PGGANGenerator(BaseGenerator):
     import sys
     import pickle
     import tensorflow as tf
+    import tensorflow.compat.v1 as tfc
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
     sys.path.append(model_settings.BASE_DIR + '/pggan_tf_official')
 
     self.logger.info(f'Loading tensorflow model from `{self.tf_model_path}`.')
-    tf.InteractiveSession()
+    tfc.InteractiveSession()
     with open(self.tf_model_path, 'rb') as f:
       _, _, tf_model = pickle.load(f)
     self.logger.info(f'Successfully loaded!')
